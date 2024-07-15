@@ -12,7 +12,8 @@ jobs:
           submodules: recursive
       - name: Query PyPI for recent PySide release number
         id: query
-        run: python ./scripts/get-recent-releases.py 3 >> $GITHUB_OUTPUT
+        # run: python ./scripts/get-recent-releases.py 3 >> $GITHUB_OUTPUT
+        run: echo "6.6.3.1" >> $GITHUB_OUTPUT  # Force PySide6 version
       - name: Build sdist
         env:
           PIP_EXTRA_INDEX_URL: https://download.qt.io/official_releases/QtForPython/
